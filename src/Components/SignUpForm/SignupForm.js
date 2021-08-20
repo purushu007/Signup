@@ -66,7 +66,7 @@ export default class SignUpForm extends Component {
             errors["password"] = "Please enter your password.";
         }
         if (typeof inputFields["password"] !== "undefined") {
-            if (!inputFields["password"].match(/^(?=.*[A-Za-z])(?=.*\d)(?=.*[@$!%*#?&])[A-Za-z\d@$!%*#?&]{8,}$/)) {
+            if (!inputFields["password"].match(/^.{6,}$/)) {
               formIsValid = false;
               errors["password"] = "Password must be at least 6 characters long.";
             }
@@ -102,7 +102,7 @@ export default class SignUpForm extends Component {
                                 <div className="error-msg">Please enter valid email-ID.</div>
                             </div>
                             <div className="field-container">
-                                <input type="password" id="password" name="password" required aria-required="true" minLength="6" pattern="^(?=.*[A-Za-z])(?=.*\d)(?=.*[@$!%*#?&])[A-Za-z\d@$!%*#?&]{8,}$" placeholder=" " className={this.state.errors && this.state.errors.password ? 'form-input error' : 'form-input password'} value={this.state.inputFields.password} onChange={this.handleChange} noValidate aria-labelledby="Enter Password"/>
+                                <input type="password" id="password" name="password" required aria-required="true" minLength="6" placeholder=" " className={this.state.errors && this.state.errors.password ? 'form-input error' : 'form-input password'} value={this.state.inputFields.password} onChange={this.handleChange} noValidate aria-labelledby="Enter Password"/>
                                 <label htmlFor="password">Password</label>
                                 <div className="error-msg">Password must be at least 6 characters long.</div>
                             </div>
