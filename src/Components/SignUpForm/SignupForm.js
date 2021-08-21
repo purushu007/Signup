@@ -115,7 +115,7 @@ export default class SignUpForm extends Component {
                                 </label>
                             </div>
                             <div className="submit-container">
-                                <button type="submit" disabled={this.state.disabled}>SIGN UP</button>
+                                <button type="submit" disabled={this.state.disabled} tabIndex="0">SIGN UP</button>
                                 <img src={rightArrow} alt="arrow"/>
                             </div>
                         </form>
