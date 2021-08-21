@@ -207,6 +207,7 @@
                     }
                     .form-input[type=checkbox] {
                         visibility: hidden;
+                        display: none;
                         &:checked ~ .check-mark {
                             background-color: #FF0066;
                             border: 2px solid #FF0066;
