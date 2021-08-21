@@ -22,7 +22,7 @@
                 overflow: hidden;
                 border-right: .15em solid #FF0066;
                 white-space: nowrap;
-                animation: typing 2s steps(30, end), blink-caret .3s step-end infinite;
+                animation: typing 2s steps(30, end), blink-caret .5s step-end infinite;
                 display: inline-block;
             }
             p {
@@ -173,18 +173,52 @@
                 line-height: 24px;
                 display: flex;
                 position: relative;
+                .checkbox-label {
+                    display: block;
+                    position: relative;
+                    cursor: pointer;
+                    .terms-label-text {
+                        margin-left: 40px;
+                    }
+                    .check-mark {
+                        position: absolute;
+                        top: 0;
+                        left: 0;
+                        margin-right: 10px;
+                        background-color: rgba(197, 211, 232, 0.1);
+                        border: 2px solid #C5D3E8;
+                        border-radius: 6px;
+                        width: 24px;
+                        height: 24px;
+                        &:after {
+                            content: "";
+                            position: absolute;
+                            display: none;
+                            left: 6px;
+                            bottom: 5px;
+                            width: 4px;
+                            height: 9px;
+                            border: solid white;
+                            border-width: 0 3px 3px 0;
+                            -webkit-transform: rotate(45deg);
+                            -ms-transform: rotate(45deg);
+                            transform: rotate(45deg);
+                        }
+                    }
+                    .form-input[type=checkbox] {
+                        visibility: hidden;
+                        &:checked ~ .check-mark {
+                            background-color: #FF0066;
+                            border: 2px solid #FF0066;
+                            &:after {
+                                display: block;
+                            }
+                        }
+                    }
+                }
                 span {
                     color: #FF0066;
                     margin: 0 5px;
-                }
-                .form-input[type=checkbox] {
-                    margin-right: 10px;
-                    background-color: rgba(197, 211, 232, 0.1);
-                    border: 2px solid #C5D3E8;
-                    border-radius: 6px;
-                    opacity: 0.6000000238418579;
-                    width: 24px;
-                    height: 24px;
                 }
             }
             .submit-container {

@@ -107,9 +107,12 @@ export default class SignUpForm extends Component {
                                 <div className="error-msg">Password must be at least 6 characters long.</div>
                             </div>
                             <div className="terms-checkbox">
-                                <input type="checkbox" name="checkbox" id="subscribe" className={this.state.errors && this.state.errors.checkbox ? 'form-input checkbox error' : 'form-input checkbox'} value={this.state.checkbox} checked={this.state.checkbox} onChange={this.handleCheckBox} noValidate/>
-                                <label htmlFor="subscribe">I agree to the<span>Terms</span>and<span>Privacy Policy</span></label>
-                                <div className="error-msg">Please check Terms & Policy</div>
+                                <label htmlFor="subscribe" className="checkbox-label">
+                                    <div className="terms-label-text">I agree to the<span>Terms</span>and<span>Privacy Policy</span></div>
+                                    <input type="checkbox" name="checkbox" id="subscribe" className={this.state.errors && this.state.errors.checkbox ? 'form-input checkbox error' : 'form-input checkbox'} value={this.state.checkbox} checked={this.state.checkbox} onChange={this.handleCheckBox} noValidate/>
+                                    <span className="check-mark"></span>
+                                    <div className="error-msg">Please check Terms & Policy</div>
+                                </label>
                             </div>
                             <div className="submit-container">
                                 <button type="submit" disabled={this.state.disabled}>SIGN UP</button>
